@@ -1,0 +1,77 @@
+:root {
+    color-scheme: light;
+    --et-footer-bg: #0f5132;
+    --et-footer-text: #f8f9fa;
+    --et-footer-link: #f8f9fa;
+    --et-toggle-bg: rgba(255, 255, 255, 0.9);
+    --et-toggle-hover: rgba(248, 249, 250, 0.95);
+    --et-toggle-border: rgba(15, 81, 50, 0.28);
+    --et-toggle-color: #0f5132;
+}
+:root[data-bs-theme='dark'] {
+    color-scheme: dark;
+    --et-footer-bg: #113c28;
+    --et-footer-text: #d8f5e4;
+    --et-footer-link: #8fe3b0;
+    --et-toggle-bg: rgba(33, 37, 41, 0.85);
+    --et-toggle-hover: rgba(39, 43, 47, 0.95);
+    --et-toggle-border: rgba(143, 227, 176, 0.35);
+    --et-toggle-color: #e6fff1;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.navbar {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+footer {
+    background-color: var(--et-footer-bg);
+    color: var(--et-footer-text);
+    border-top: 1px solid var(--bs-border-color-translucent);
+}
+footer a {
+    color: var(--et-footer-link);
+    text-decoration: underline;
+}
+footer a:hover {
+    opacity: 0.85;
+}
+.theme-toggle {
+    padding: 0.35rem 0.65rem;
+    border-radius: 9999px;
+    border: 1px solid var(--et-toggle-border);
+    background-color: var(--et-toggle-bg);
+    color: var(--et-toggle-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.theme-toggle:hover {
+    background-color: var(--et-toggle-hover);
+}
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--bs-primary);
+    outline-offset: 2px;
+}
+.theme-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    display: inline-flex;
+}
+.theme-icon-dark {
+    display: none;
+}
+[data-bs-theme='dark'] .theme-icon-light {
+    display: none;
+}
+[data-bs-theme='dark'] .theme-icon-dark {
+    display: inline-flex;
+}

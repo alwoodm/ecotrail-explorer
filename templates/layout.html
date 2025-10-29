@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{pageTitle}} | {{siteTitle}}</title>
+    <meta name="description" content="{{metaDescription}}">
+    <meta name="keywords" content="{{metaKeywords}}">
+    <script>
+        (function () {
+            try {
+                const storedTheme = localStorage.getItem('et-theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = storedTheme || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-bs-theme', theme);
+            } catch (error) {
+                document.documentElement.setAttribute('data-bs-theme', 'light');
+            }
+        })();
+    </script>
+    <link href="assets/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/layout.css" rel="stylesheet">
+</head>
+<body>
+    <header class="border-bottom">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="index.php?site=home">{{siteTitle}}</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Przełącz nawigację">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                        {{navigation}}
+                        <li class="nav-item ms-lg-3 mt-3 mt-lg-0 d-lg-flex align-items-lg-center">
+                            <button class="theme-toggle" type="button" id="themeToggle" aria-label="Przełącz tryb kolorów">
+                                <svg class="theme-icon theme-icon-light" aria-hidden="true">
+                                    <use href="assets/icons.svg#icon-sun"></use>
+                                </svg>
+                                <svg class="theme-icon theme-icon-dark" aria-hidden="true">
+                                    <use href="assets/icons.svg#icon-moon"></use>
+                                </svg>
+                                <span class="visually-hidden">Przełącz motyw jasny/ciemny</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {{content}}
+    </main>
+
+    <footer class="py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-1 mb-md-0">&copy; {{currentYear}} {{siteTitle}}. Aleksander Lis.</p>
+            <p class="small mb-0">Zrealizowano w ramach projektu edukacyjnego. Kod źródłowy: <a href="https://github.com/alwoodm/ecotrail-explorer" target="_blank" rel="noopener">GitHub</a>.</p>
+        </div>
+    </footer>
+
+    <script src="assets/bootstrap.bundle.min.js"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <script src="assets/layout.js"></script>
+</body>
+</html>

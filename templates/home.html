@@ -1,0 +1,27 @@
+<section class="py-5 text-center bg-success text-white">
+    <div class="container">
+        <h1 class="display-4 fw-bold">{{heroTitle}}</h1>
+        <p class="lead mb-4">{{heroSubtitle}}</p>
+        <a class="btn btn-light btn-lg" href="{{ctaTarget}}">{{ctaLabel}}</a>
+    </div>
+</section>
+
+<section class="py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row g-4">
+            {{highlightCards}}
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="h3 mb-0">Historie z tras</h2>
+            <a href="index.php?site=stories" class="btn btn-outline-success">Zobacz wszystkie</a>
+        </div>
+        <div class="row g-4">
+            {{storiesList}}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,48 @@
+<section class="py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row g-5 align-items-start">
+            <div class="col-lg-5">
+                <h1 class="display-5 fw-semibold mb-4">{{pageTitle}}</h1>
+                <p class="lead text-muted">Skontaktuj się z nami, aby zarezerwować wyprawę lub zadać pytania dotyczące programu.</p>
+                <ul class="list-group list-group-flush mb-4">
+                    {{contactDetails}}
+                </ul>
+            </div>
+            <div class="col-lg-7">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">{{formHeading}}</h2>
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                            <!-- Wstaw własny Web3Forms access_key poniżej. Bez niego formularz nie wyśle danych. -->
+                            <!-- <input type="hidden" name="access_key" value="TWOJ-KLUCZ"> -->
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label" for="name">Imię i nazwisko</label>
+                                    <input class="form-control" type="text" id="name" name="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="email">Adres e-mail</label>
+                                    <input class="form-control" type="email" id="email" name="email" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="subject">Temat</label>
+                                    <input class="form-control" type="text" id="subject" name="subject" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="message">Wiadomość</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="h-captcha" data-captcha="true"></div>
+                                </div>
+                                <div class="col-12 text-end">
+                                    <button class="btn btn-success" type="submit">Wyślij wiadomość</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
